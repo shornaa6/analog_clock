@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgb(65, 63, 63);
+    border: 4px solid rgb(83, 82, 82);
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.clock span {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    /* 360/12 = 30 */
+
+    inset: 12px;
+    text-align: center;
+}
+
+
+.clock span b{
+    position: absolute;
+    color: wheat;
+    transform: rotate(calc(-30deg * var(--i)));
+    font-size: 20px;
+}
+.container {
+    position: relative;
+
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+
+
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background-color: var(--clr);;
+    width: 4px;
+    height: 70px;
+    border-radius: 8px;
+
+}
+
+
+/* Hour hand */
+#hour i {
+    width: 6px;
+    height: 70px;
+}
+
+/* Minute hand */
+#min i {
+    width: 4px;
+    height: 90px;
+}
+
+/* Second hand */
+#sec i {
+    width: 2px;
+    height: 110px;
+}
